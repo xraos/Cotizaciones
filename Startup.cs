@@ -23,6 +23,7 @@ namespace Cotizaciones
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            /// Iniciador del ORM
             services.AddDbContext<CotizacionesContext>();
         }
 

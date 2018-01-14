@@ -17,32 +17,38 @@ namespace Cotizaciones.Models {
     /// </remarks>
     public class Cotizacion
     {
+        /// Id de la Cotizacion
         public int CotizacionId { get; set; }
-
+        /// Metodo que obliga a que el elemento no sea nulo y 
+        ///el usuario se vea obligado a rellenar el campo
         [Required(ErrorMessage = "This is required.")]
-
+        /// Nombre de la Cotizacion
         public string Nombre { get; set; }
-
+        ///Metodo que evita que el elemento sea nulo
         [Required(ErrorMessage = "This is required.")]
-
+        /// Fecha de la Cotizacion
         public string Fecha { get; set; }
-
+        ///Metodo que evita que el elemento sea nulo
         [Required(ErrorMessage = "This is required.")]
-
+        /// Servicios de la Cotizacion
         public string Servicios { get; set; }
-
+        ///Metodo que evita que el elemento sea nulo
         [Required(ErrorMessage = "This is required.")]
-
+        /// Valor de la cotizacion
         public uint ValorCotizado { get; set; }
-
+        ///Metodo que evita que el elemento sea nulo
         [Required(ErrorMessage = "This is required.")]
-
+        /// Descripcion de la cotizacion
         public string Descripcion { get; set; }
-
+        ///Metodo que evita que el elemento sea nulo
         [Required(ErrorMessage = "This is required.")]
 
+        /// Para cada cotizacion se le asignara una persona
+        /// El cual el atributo de referencia sera el rut
+        /// se crea esta variable rut dentro de la clase para referencial
+        /// y poder mostrar en la interfaz una seleccion del rut
         public int Rut { get; set; }
-        
+        /// Cada cotizacion esta asignada una persona
         public Persona Persona { get; set; }
     
     }
