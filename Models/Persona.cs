@@ -37,22 +37,7 @@ namespace Cotizaciones.Models {
 
         public List<Cotizacion> Cotizaciones { get; set; }
 
-        public Persona(
-            int PersonaId, 
-            string Rut, 
-            string Nombre, 
-            string Paterno, 
-            string Materno, 
-            List<Cotizacion> Cotizaciones)
-        {
-            this.PersonaId = PersonaId;
-            this.Rut = Rut;
-            this.Nombre = Nombre;
-            this.Paterno = Paterno;
-            this.Materno = Materno;
-            this.Cotizaciones = Cotizaciones;
-
-        }
+        
 
     }
 }

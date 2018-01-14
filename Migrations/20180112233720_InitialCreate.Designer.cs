@@ -10,7 +10,7 @@ using System;
 namespace Cotizaciones.Migrations
 {
     [DbContext(typeof(CotizacionesContext))]
-    [Migration("20180112220305_InitialCreate")]
+    [Migration("20180112233720_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
