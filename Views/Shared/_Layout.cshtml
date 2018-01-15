@@ -4,47 +4,99 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Cotizaciones</title>
-
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
     <environment exclude="Development">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+        <link rel="stylesheet" href="https://dl.dropboxusercontent.com/s/b6r7b91xi0j3zmr/styles.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="" asp-append-version="true" />
     </environment>
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Cotizaciones</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+<div class="header">
+	     <div class="container">
+	        <div class="row">
+	           <div class="col-md-5">
+	              <!-- Logo -->
+	              <div class="logo">
+	                 <h1><a href="index.html">Cotizaciones - Dep. Periodismo</a></h1>
+	              </div>
+	           </div>
+	           <div class="col-md-5">
+	              <div class="row">
+	                <div class="col-lg-12">
+	                  
+	                </div>
+	              </div>
+	           </div>
+	           <div class="col-md-6">
+	              <div class="navbar navbar-inverse" role="banner">
+	                  <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
+	                    <ul class="nav navbar-nav"><br>
+	                    <font color="white">
+	                        <script>
+var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+var diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
+var f=new Date();
+document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
+</script> 
+	                       </font>
+	                      
+	                    </ul>
+	                  </nav>
+	              </div>
+	           </div>
+	        </div>
+	     </div>
+	</div>
+
+    <div class="page-content">
+    	<div class="row">
+		  <div class="col-md-2">
+		  	<div class="sidebar content-box" style="display: block;">
+                <ul class="nav">
+                    <!-- Main menu -->
+                    <li class="current"><a asp-area="" asp-controller="Home" asp-action="Index"><i class="glyphicon glyphicon-home"></i> Inicio</a></li>
+                    <li><a href="/Persona/Create"><i class="glyphicon glyphicon-calendar"></i> Crear Persona</a></li>
+                    <li><a href="/Persona"><i class="glyphicon glyphicon-stats"></i> Editar Persona</a></li>
+                    <li><a href="/Cotizacion/Create"><i class="glyphicon glyphicon-list"></i> Crear Cotizacion</a></li>
+                    <li><a href="/Cotizacion"><i class="glyphicon glyphicon-record"></i> Editar Cotizacion</a></li>
+                    <li><a href="editors.html"><i class="glyphicon glyphicon-pencil"></i> Ver por Persona</a></li>
+                    <li><a href="forms.html"><i class="glyphicon glyphicon-tasks"></i> Salir</a></li>
+                    
                 </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2018 - Cotizaciones</p>
-        </footer>
+             </div>
+		  </div>
+		  <div class="col-md-10">
+		  	<div class="row">
+		  		<div class="col-md-6">
+		  			
+		  		</div>
+
+		  		
+		  	</div>
+
+		  	
+
+		  	<div class="content-box-large">
+				@RenderBody()
+		  	</div>
+		  </div>
+		</div>
     </div>
 
+    <footer>
+         <div class="container">
+         
+            <div class="copy text-center">
+               Copyright 2018 <a asp-area="" asp-controller="Home" asp-action="Index">Cotizaciones UCN - Departamento de Periodismo</a>
+            </div>
+            
+         </div>
+      </footer>
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
@@ -67,5 +119,10 @@
     </environment>
 
     @RenderSection("Scripts", required: false)
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://dl.dropboxusercontent.com/s/0m41adiuildux7q/bootstrap.min.js"></script>
+    <script src="https://dl.dropboxusercontent.com/s/b0jlx4f0sk2beff/custom.js"></script>
 </body>
 </html>

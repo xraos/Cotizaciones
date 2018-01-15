@@ -1,14 +1,20 @@
 @model Cotizaciones.Models.Cotizacion
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalles Cotizacion";
 }
 
-<h2>Details</h2>
+<h2>Detalles de la Cotizacion</h2>
 
 <div>
-    <h4>Cotizacion</h4>
+    <h4>A continuacion se muestra los detalles de la cotizacion seleccionada:</h4>
     <hr />
+    <div class="content-box-header">
+			<div class="panel-title"><b>Detalles de: @Html.DisplayFor(model => model.Nombre)</b> </div>
+								
+				
+			</div>
+		<div class="content-box-large box-with-header">
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Nombre)
@@ -47,8 +53,11 @@
             @Html.DisplayFor(model => model.Persona.Materno)
         </dd>
     </dl>
-</div>
+
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.CotizacionId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.CotizacionId">Editar Cotizacion</a> |
+    <a asp-action="Index">Ir a la lista de cotizaciones</a>
+</div>
+</div>
+
 </div>

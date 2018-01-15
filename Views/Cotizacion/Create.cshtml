@@ -1,12 +1,13 @@
 @model Cotizaciones.Models.Cotizacion
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Crear Cotizacion";
 }
 
-<h2>Create</h2>
+<h2>Creacion de Cotizaciones</h2>
 
-<h4>Cotizacion</h4>
+<h4>Introduzca los datos de la nueva Cotizacion</h4><br>
+<font color="red"><h4>* Todos los campos son obligatorios</h4></font>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -34,7 +35,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Descripcion" class="control-label"></label>
-                <input asp-for="Descripcion" class="form-control" />
+                <textarea asp-for="Descripcion" class="form-control" rows="5" /></textarea>
                 <span asp-validation-for="Descripcion" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -42,14 +43,14 @@
                 <select asp-for="Rut" class ="form-control" asp-items="ViewBag.Rut"></select>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Crear Cotizacion" class="btn btn-default" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Ir a la lista de Cotizaciones</a>
 </div>
 
 @section Scripts {

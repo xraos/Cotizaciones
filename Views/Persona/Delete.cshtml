@@ -1,15 +1,18 @@
 @model Cotizaciones.Models.Persona
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Eliminar";
 }
 
-<h2>Delete</h2>
+<h2>Eliminar Persona/Usuario</h2>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Persona</h4>
-    <hr />
+<font color="red"><h4>Esta Seguro que desea eliminar a esta persona?</h3></font>
+<div class="content-box-header">
+			<div class="panel-title"><b>Detalles de: @Html.DisplayFor(model => model.Nombre) @Html.DisplayFor(model => model.Paterno)</b> </div>
+								
+				
+			</div>
+		<div class="content-box-large box-with-header">
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Rut)
@@ -39,7 +42,13 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="PersonaId" />
-        <input type="submit" value="Delete" class="btn btn-default" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Eliminar" class="btn btn-default" /> |
+        <a asp-action="Index">Volver a la lista de Personas/Usuarios</a>
     </form>
+</div>
+
+</div>
+
+    
+
 </div>

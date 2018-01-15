@@ -1,15 +1,23 @@
 @model Cotizaciones.Models.Persona
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalles";
 }
 
-<h2>Details</h2>
+<h2>Detalles de la Persona/Usuario</h2>
 
 <div>
-    <h4>Persona</h4>
+    <h4>A continuacion se muestra los detalles de la persona seleccionada:</h4>
     <hr />
-    <dl class="dl-horizontal">
+    
+		<div class="content-box-header">
+			<div class="panel-title"><b>Detalles de: @Html.DisplayFor(model => model.Nombre) @Html.DisplayFor(model => model.Paterno)</b> </div>
+								
+				
+			</div>
+		<div class="content-box-large box-with-header">
+				  				
+		<dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Rut)
         </dt>
@@ -35,8 +43,15 @@
             @Html.DisplayFor(model => model.Materno)
         </dd>
     </dl>
+    <div>
+    <a asp-action="Edit" asp-route-id="@Model.PersonaId">Editar esta Persona</a> |
+    <a asp-action="Index">Ir a la lista de Personas</a>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.PersonaId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
 </div>
+
+</div>
+
+    
+
+</div>
+

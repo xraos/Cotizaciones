@@ -21,19 +21,19 @@ namespace Cotizaciones.Models {
         public int PersonaId { get; set; }
         /// Metodo que obliga a que el elemento no sea nulo y 
         ///el usuario se vea obligado a rellenar el campo
-        [Required(ErrorMessage = "This is required.")]
+        [Required(ErrorMessage = "Campo Obligatorio.")]
         /// Rut de la persona
         public string Rut { get; set; }
         ///Metodo que evita que el elemento sea nulo
-        [Required(ErrorMessage = "This is required.")]
+        [Required(ErrorMessage = "Campo Obligatorio.")]
         /// Nombre de la persona
         public string Nombre { get; set; }
         ///Metodo que evita que el elemento sea nulo
-        [Required(ErrorMessage = "This is required.")]
+        [Required(ErrorMessage = "Campo Obligatorio.")]
         /// Apellido parterno de la persona
         public string Paterno { get; set; }
         ///Metodo que evita que el elemento sea nulo
-        [Required(ErrorMessage = "This is required.")]
+        [Required(ErrorMessage = "Campo Obligatorio.")]
         /// Apellido materno de la persona
         public string Materno { get; set; }
         /// cada persona tiene una lista de cotizaciones (1 a muchos)
