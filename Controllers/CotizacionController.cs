@@ -48,7 +48,7 @@ namespace Cotizaciones.Controllers
         // GET: Cotizacion/Create
         public IActionResult Create()
         {
-            ViewData["Rut"] = new SelectList(_context.Personas, "PersonaId", "Materno");
+            ViewData["Rut"] = new SelectList(_context.Personas, "PersonaId", "Rut");
             return View();
         }
 
@@ -65,7 +65,7 @@ namespace Cotizaciones.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Rut"] = new SelectList(_context.Personas, "PersonaId", "Materno", cotizacion.Rut);
+            ViewData["Rut"] = new SelectList(_context.Personas, "PersonaId", "Rut", cotizacion.Rut);
             return View(cotizacion);
         }
 
@@ -82,7 +82,7 @@ namespace Cotizaciones.Controllers
             {
                 return NotFound();
             }
-            ViewData["Rut"] = new SelectList(_context.Personas, "PersonaId", "Materno", cotizacion.Rut);
+            ViewData["Rut"] = new SelectList(_context.Personas, "PersonaId", "Rut", cotizacion.Rut);
             return View(cotizacion);
         }
 
@@ -118,7 +118,7 @@ namespace Cotizaciones.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Rut"] = new SelectList(_context.Personas, "PersonaId", "Materno", cotizacion.Rut);
+            ViewData["Rut"] = new SelectList(_context.Personas, "PersonaId", "Rut", cotizacion.Rut);
             return View(cotizacion);
         }
 
