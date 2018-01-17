@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<Cotizaciones.Models.Usuario>
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -63,6 +64,35 @@
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Usuarios Registrados</h2>
+        @if (Model.Any())
+        {
+            <table class="table">
+                <tr>
+                    <th>Nombre de Usuario</th>
+                    <th>Password</th>
+
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.NombreUsuario</td>
+                        <td>@item.Password</td>
+
+                    </tr>
+                }
+            </table>
+        }
+        else
+        {
+            <p>There are no registered users.</p>
+
+        }
+    </div>
 </div>
 
 <div class="row">

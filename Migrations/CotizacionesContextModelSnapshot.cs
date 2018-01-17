@@ -71,6 +71,24 @@ namespace Cotizaciones.Migrations
                     b.ToTable("Personas");
                 });
 
+            modelBuilder.Entity("Cotizaciones.Models.Usuario", b =>
+                {
+                    b.Property<int>("UsuarioID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ConfirmarPassword");
+
+                    b.Property<string>("NombreUsuario")
+                        .IsRequired();
+
+                    b.Property<string>("Password")
+                        .IsRequired();
+
+                    b.HasKey("UsuarioID");
+
+                    b.ToTable("Usuarios");
+                });
+
             modelBuilder.Entity("Cotizaciones.Models.Cotizacion", b =>
                 {
                     b.HasOne("Cotizaciones.Models.Persona", "Persona")

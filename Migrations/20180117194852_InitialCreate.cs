@@ -26,6 +26,21 @@ namespace Cotizaciones.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Usuarios",
+                columns: table => new
+                {
+                    UsuarioID = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    ConfirmarPassword = table.Column<string>(nullable: true),
+                    NombreUsuario = table.Column<string>(nullable: false),
+                    Password = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Usuarios", x => x.UsuarioID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Cotizaciones",
                 columns: table => new
                 {
@@ -59,6 +74,9 @@ namespace Cotizaciones.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Cotizaciones");
+
+            migrationBuilder.DropTable(
+                name: "Usuarios");
 
             migrationBuilder.DropTable(
                 name: "Personas");

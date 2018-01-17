@@ -18,6 +18,7 @@ namespace Cotizaciones.Data {
         /// Asigna las clases para ser creadas por el dbcontext (ORM)
         public DbSet<Persona> Personas { get; set; }
         public DbSet<Cotizacion> Cotizaciones { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
 
         /// Metodo que crea el modelalo de la base de datos
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -25,6 +25,10 @@ namespace Cotizaciones
             services.AddMvc();
             /// Iniciador del ORM
             services.AddDbContext<CotizacionesContext>();
+            /// Iniciar Memoria Cache (para las sesiones de usuarios)
+            services.AddDistributedMemoryCache();
+            /// Inicia Una sesion, esto apuntara a la session actual
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,6 +44,8 @@ namespace Cotizaciones
             }
 
             app.UseStaticFiles();
+            ///Para usar sesion
+            app.UseSession();
 
             app.UseMvc(routes =>
             {

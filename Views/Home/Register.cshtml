@@ -1,0 +1,44 @@
+@model Cotizaciones.Models.Usuario
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h2>Register</h2>
+
+<div class="form-horizontal">
+    <form asp-controller="Home" asp-action="Register" method="post">
+        @if (ViewBag.Message != null)
+        {
+            <div class="form-control">
+                <div class="col-md-10">@ViewBag.Message</div>
+            </div>
+        }
+
+        <div class="form-group">
+            <label asp-for="NombreUsuario" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="NombreUsuario" class="form-control" />
+                <span asp-validation-for="NombreUsuario" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Password" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ConfirmarPassword" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ConfirmarPassword" class="form-control" />
+                <span asp-validation-for="ConfirmarPassword" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-default">Register</button>
+            </div>
+        </div>
+    </form>
+</div>

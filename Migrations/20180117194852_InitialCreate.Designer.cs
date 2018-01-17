@@ -10,7 +10,7 @@ using System;
 namespace Cotizaciones.Migrations
 {
     [DbContext(typeof(CotizacionesContext))]
-    [Migration("20180112233720_InitialCreate")]
+    [Migration("20180117194852_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -70,6 +70,24 @@ namespace Cotizaciones.Migrations
                         .HasName("AlternateKey_Rut");
 
                     b.ToTable("Personas");
+                });
+
+            modelBuilder.Entity("Cotizaciones.Models.Usuario", b =>
+                {
+                    b.Property<int>("UsuarioID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ConfirmarPassword");
+
+                    b.Property<string>("NombreUsuario")
+                        .IsRequired();
+
+                    b.Property<string>("Password")
+                        .IsRequired();
+
+                    b.HasKey("UsuarioID");
+
+                    b.ToTable("Usuarios");
                 });
 
             modelBuilder.Entity("Cotizaciones.Models.Cotizacion", b =>
