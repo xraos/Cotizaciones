@@ -1,9 +1,11 @@
+@using Microsoft.AspNetCore.Http
 @model Cotizaciones.Models.Persona
 
 @{
     ViewData["Title"] = "Detalles Persona";
 }
-
+@if (Context.Session.GetString("UsuarioID") != null)
+{
 <h2>Detalles de la Persona/Usuario</h2>
 
 <div>
@@ -46,12 +48,13 @@
     <div>
     <a asp-action="Edit" asp-route-id="@Model.PersonaId">Editar esta Persona</a> |
     <a asp-action="Index">Ir a la lista de Personas</a>
-</div>
-</div>
 
-</div>
-
-    
-
+    </div>
 </div>
 
+</div>
+}
+                    else
+                    {
+                        <h4>Debe iniciar sesion para poder utilizar el sistema. <br><br><a asp-area="" asp-controller="Home" asp-action="Login">Iniciar Sesion</a></h4> 
+                    }

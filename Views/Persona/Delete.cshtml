@@ -1,12 +1,13 @@
 @model Cotizaciones.Models.Persona
-
+@using Microsoft.AspNetCore.Http
 @{
     ViewData["Title"] = "Eliminar Persona";
 }
-
+@if (Context.Session.GetString("UsuarioID") != null)
+{
 <h2>Eliminar Persona/Usuario</h2>
 
-<font color="red"><h4>Esta Seguro que desea eliminar a esta persona?</h3></font>
+<font color="red"><h4>Esta Seguro que desea eliminar a esta persona?</h4></font>
 <div class="content-box-header">
 			<div class="panel-title"><b>Detalles de: @Html.DisplayFor(model => model.Nombre) @Html.DisplayFor(model => model.Paterno)</b> </div>
 								
@@ -47,8 +48,9 @@
     </form>
 </div>
 
-</div>
 
-    
-
-</div>
+}
+                    else
+                    {
+                        <h4>Debe iniciar sesion para poder utilizar el sistema. <br><br><a asp-area="" asp-controller="Home" asp-action="Login">Iniciar Sesion</a></h4> 
+                    }

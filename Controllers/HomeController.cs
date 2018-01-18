@@ -19,6 +19,7 @@ namespace Cotizaciones.Controllers
         }
         public IActionResult Index()
         {
+            ViewBag.NombreUsuario = HttpContext.Session.GetString("NombreUsuario");
             return View(_context.Usuarios.ToList());
         }
 
@@ -70,8 +71,8 @@ namespace Cotizaciones.Controllers
             if(cuenta != null)
             {
                 HttpContext.Session.SetString("UsuarioID", cuenta.UsuarioID.ToString());
-                HttpContext.Session.SetString("Nombre de Usuario", cuenta.NombreUsuario);
-                return RedirectToAction("Welcome");
+                HttpContext.Session.SetString("NombreUsuario", cuenta.NombreUsuario);
+                return RedirectToAction("Index");
             }else
             {
                 ModelState.AddModelError("","Usuario o Password Estan Erroneos");
@@ -85,6 +86,7 @@ namespace Cotizaciones.Controllers
             {
                 ViewBag.NombreUsuario = HttpContext.Session.GetString("NombreUsuario");
                 return View();
+                ///HttpContext.Session.GetString("UsuarioID");
             }
             else
             {

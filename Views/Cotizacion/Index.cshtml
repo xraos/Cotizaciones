@@ -1,9 +1,10 @@
 @model IEnumerable<Cotizaciones.Models.Cotizacion>
-
+@using Microsoft.AspNetCore.Http
 @{
     ViewData["Title"] = "Index";
 }
-
+@if (Context.Session.GetString("UsuarioID") != null)
+                    {
 <h2>Lista de Cotizaciones</h2>
 
 <p>
@@ -11,7 +12,10 @@
 </p>
 <table class="table">
     <thead>
-        <tr>
+        <tr>    
+                <th>
+                ID
+                </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Nombre)
                 </th>
@@ -34,6 +38,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CotizacionId)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Nombre)
             </td>
@@ -59,3 +66,8 @@
 }
     </tbody>
 </table>
+                    }
+                    else
+                    {
+                        <h4>Debe iniciar sesion para poder utilizar el sistema. <br><br><a asp-area="" asp-controller="Home" asp-action="Login">Iniciar Sesion</a></h4> 
+                    }

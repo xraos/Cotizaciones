@@ -1,9 +1,10 @@
 @model Cotizaciones.Models.Cotizacion
-
+@using Microsoft.AspNetCore.Http
 @{
     ViewData["Title"] = "Editar Cotizacion";
 }
-
+@if (Context.Session.GetString("UsuarioID") != null)
+{
 <h2>Editar Cotizacion</h2>
 
 <h4>Edite los datos de la Cotizacion</h4><br>
@@ -37,7 +38,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Descripcion" class="control-label"></label>
-                <input asp-for="Descripcion" class="form-control" />
+                <input asp-for="Descripcion" class="form-control form-control-lg"   />
                 <span asp-validation-for="Descripcion" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -59,3 +60,8 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+                    }
+                    else
+                    {
+                        <h4>Debe iniciar sesion para poder utilizar el sistema. <br><br><a asp-area="" asp-controller="Home" asp-action="Login">Iniciar Sesion</a></h4> 
+                    }

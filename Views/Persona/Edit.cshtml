@@ -1,9 +1,11 @@
+@using Microsoft.AspNetCore.Http
 @model Cotizaciones.Models.Persona
 
 @{
     ViewData["Title"] = "Editar Persona";
 }
-
+@if (Context.Session.GetString("UsuarioID") != null)
+{
 <h2>Editar Persona/Usuario</h2>
 
 <h4>Edite los datos del Usuario/Persona</h4><br>
@@ -48,3 +50,8 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+                    }
+                    else
+                    {
+                        <h4>Debe iniciar sesion para poder utilizar el sistema. <br><br><a asp-area="" asp-controller="Home" asp-action="Login">Iniciar Sesion</a></h4> 
+                    }

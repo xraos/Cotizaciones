@@ -1,9 +1,10 @@
 @model Cotizaciones.Models.Cotizacion
-
+@using Microsoft.AspNetCore.Http
 @{
     ViewData["Title"] = "Detalles Cotizacion";
 }
-
+@if (Context.Session.GetString("UsuarioID") != null)
+{
 <h2>Detalles de la Cotizacion</h2>
 
 <div>
@@ -61,3 +62,8 @@
 </div>
 
 </div>
+}
+                    else
+                    {
+                        <h4>Debe iniciar sesion para poder utilizar el sistema. <br><br><a asp-area="" asp-controller="Home" asp-action="Login">Iniciar Sesion</a></h4> 
+                    }
