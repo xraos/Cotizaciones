@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
     <environment exclude="Development">
+        <!--referencia a la hoja de estilo .css que se utilizo para darle la interfaz grafica a la aplicacion-->
         <link rel="stylesheet" href="https://dl.dropboxusercontent.com/s/b6r7b91xi0j3zmr/styles.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
@@ -32,6 +33,7 @@
 	                  <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
 	                    <ul class="nav navbar-nav"><br>
 	                    <font color="white">
+                            <!--JavaScrip que muestra La fecha actual-->
 	                        <script>
 var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
 var diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
@@ -53,13 +55,15 @@ document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.ge
 		  <div class="col-md-2">
 		  	<div class="sidebar content-box" style="display: block;">
                 <ul class="nav">
-                    <!-- Main menu -->
+                    <!-- Menu de opciones -->
                     <li><a asp-area="" asp-controller="Home" asp-action="Index"><i class="glyphicon glyphicon-home"></i> Inicio</a></li>
                     <li><a href="/Persona/Create"><i class="glyphicon glyphicon-user"></i> Crear Persona</a></li>
                     <li><a href="/Persona"><i class="glyphicon glyphicon-pencil"></i> Editar Persona</a></li>
                     <li><a href="/Cotizacion/Create"><i class="glyphicon glyphicon-file"></i> Crear Cotizacion</a></li>
                     <li><a href="/Cotizacion"><i class="glyphicon glyphicon-pencil"></i> Editar Cotizacion</a></li>
                     <li><a href="editors.html"><i class="glyphicon glyphicon-list"></i> Ver por Persona</a></li>
+                    <!--Este metodo crea una condicion que mientras haya una session abierta se muestre la opcion salir
+                    y en el caso de que no haya ninguna sesion iniciada mostrar la opcion registrarse o iniciar sesion-->
                     @if (Context.Session.GetString("UsuarioID") != null)
                     {
                         <li class="current"><a asp-area="" asp-controller="Home" asp-action="Logout"><i class="glyphicon glyphicon-log-out"></i>Salir</a></li>

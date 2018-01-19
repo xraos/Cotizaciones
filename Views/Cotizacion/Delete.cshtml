@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Eliminar Cotizacion";
 }
+<!--Condicion que solo muestra la funcionalidad solo si hay una sesion abierta-->
 @if (Context.Session.GetString("UsuarioID") != null)
 {
 <h2>Eliminar Cotizacion</h2>
@@ -61,6 +62,7 @@
 </div>
 
 }
+                <!--En el caso que no haya una sesion abierta, pide iniciar session-->
                     else
                     {
                         <h4>Debe iniciar sesion para poder utilizar el sistema. <br><br><a asp-area="" asp-controller="Home" asp-action="Login">Iniciar Sesion</a></h4> 

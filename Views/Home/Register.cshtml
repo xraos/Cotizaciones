@@ -4,9 +4,10 @@
 }
 
 <h2>Registrarse</h2>
-
+<!--vista que muestra el formulario para poder registrarse-->
 <div class="form-horizontal">
     <form asp-controller="Home" asp-action="Register" method="post">
+        <!--Este metodo muestra un mensaje en el caso que el usuario se registro correctamente-->
         @if (ViewBag.Message != null)
         {
             <div class="form-control">

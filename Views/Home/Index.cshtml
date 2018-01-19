@@ -3,15 +3,18 @@
 @{
     ViewData["Title"] = "Home Page";
 }
+<!--Condicion que solo muestra la funcionalidad solo si hay una sesion abierta-->
 @if (Context.Session.GetString("UsuarioID") != null)
                     {
                         <h2>Bienvenido @ViewBag.NombreUsuario</h2> 
                     }
+                    <!--En el caso que no haya una sesion abierta, pide iniciar session-->
                     else
                     {
                         <h3>Bienvenido al Sistema de Cotizaciones!</h3>
                         <h4>Debe iniciar sesion para poder utilizar el sistema. <br><br><a asp-area="" asp-controller="Home" asp-action="Login">Iniciar Sesion</a></h4>
                     }
+<!--Muestra una lista con todos los usuarios registrados, junto con su password (se muestra para poder prueba del sistema)-->
 <div class="row">
     <div class="col-md-12">
         <h2>Usuarios Registrados</h2>
@@ -33,9 +36,10 @@
                 }
             </table>
         }
+        <!--En el caso que no haya usuarios registrados, imprime un mensaje-->
         else
         {
-            <p>There are no registered users.</p>
+            <p>No hay usuarios registrados.</p>
 
         }
     </div>
