@@ -23,6 +23,10 @@ namespace Cotizaciones.Data {
         /// Metodo que crea el modelalo de la base de datos
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {           
+            // Add the shadow property to the model
+            modelBuilder.Entity<Cotizacion>()
+            .Property<int>("Rut");
+
             /// Se asigna las foreignKey 
             /// y se hace la relacion de clase persona con la clase cotizacion
             modelBuilder.Entity<Cotizacion>()
@@ -31,8 +35,8 @@ namespace Cotizaciones.Data {
             /// Instancia que la clase persona tiene cotizaciones
             .WithMany(c => c.Cotizaciones)
             /// Asigna la relacion a travez de la llave foreana que sera el Rut
-            .HasForeignKey(p => p.Rut)
-            .HasConstraintName("ForeignKey_Cotizacion_Persona");
+            .HasForeignKey(p => p.Rut);
+            
 
             modelBuilder.Entity<Persona>()
             /// Asigna la primary key a la clase persona

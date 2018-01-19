@@ -37,6 +37,7 @@ namespace Cotizaciones.Models {
         /// Apellido materno de la persona
         public string Materno { get; set; }
         /// cada persona tiene una lista de cotizaciones (1 a muchos)
+        
         public List<Cotizacion> Cotizaciones { get; set; }
 
         

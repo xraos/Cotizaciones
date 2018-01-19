@@ -10,7 +10,7 @@ using System;
 namespace Cotizaciones.Migrations
 {
     [DbContext(typeof(CotizacionesContext))]
-    [Migration("20180117194852_InitialCreate")]
+    [Migration("20180119193426_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -95,7 +95,6 @@ namespace Cotizaciones.Migrations
                     b.HasOne("Cotizaciones.Models.Persona", "Persona")
                         .WithMany("Cotizaciones")
                         .HasForeignKey("Rut")
-                        .HasConstraintName("ForeignKey_Cotizacion_Persona")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

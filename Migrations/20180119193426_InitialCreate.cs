@@ -57,7 +57,7 @@ namespace Cotizaciones.Migrations
                 {
                     table.PrimaryKey("PK_Cotizaciones", x => x.CotizacionId);
                     table.ForeignKey(
-                        name: "ForeignKey_Cotizacion_Persona",
+                        name: "FK_Cotizaciones_Personas_Rut",
                         column: x => x.Rut,
                         principalTable: "Personas",
                         principalColumn: "PersonaId",

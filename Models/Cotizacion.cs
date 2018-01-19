@@ -48,6 +48,7 @@ namespace Cotizaciones.Models {
         /// se crea esta variable rut dentro de la clase para referencial
         /// y poder mostrar en la interfaz una seleccion del rut
         public int Rut { get; set; }
+        
         /// Cada cotizacion esta asignada una persona
         public Persona Persona { get; set; }
     

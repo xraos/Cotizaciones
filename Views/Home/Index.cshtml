@@ -8,9 +8,10 @@
                     {
                         <h2>Bienvenido @ViewBag.NombreUsuario</h2> 
                     }
-                    <!--En el caso que no haya una sesion abierta, pide iniciar session-->
+                    
                     else
                     {
+                        <!--En el caso que no haya una sesion abierta, pide iniciar session-->
                         <h3>Bienvenido al Sistema de Cotizaciones!</h3>
                         <h4>Debe iniciar sesion para poder utilizar el sistema. <br><br><a asp-area="" asp-controller="Home" asp-action="Login">Iniciar Sesion</a></h4>
                     }
@@ -36,9 +37,10 @@
                 }
             </table>
         }
-        <!--En el caso que no haya usuarios registrados, imprime un mensaje-->
+        
         else
         {
+            <!--En el caso que no haya una sesion abierta, pide iniciar session-->
             <p>No hay usuarios registrados.</p>
 
         }

@@ -94,7 +94,6 @@ namespace Cotizaciones.Migrations
                     b.HasOne("Cotizaciones.Models.Persona", "Persona")
                         .WithMany("Cotizaciones")
                         .HasForeignKey("Rut")
-                        .HasConstraintName("ForeignKey_Cotizacion_Persona")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
